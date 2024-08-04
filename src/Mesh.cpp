@@ -85,9 +85,10 @@ void Mesh::Render(Shader& shader)
 
 	shader.SetUniformMat4("u_ModelTransform", m_Transform.m_TransformationMatrix);
 	shader.SetUniform3f("u_Color", m_Color);
-	shader.SetUniform3f("u_Ambient", glm::vec3(g_Ambient[0], g_Ambient[1], g_Ambient[2]));
-	shader.SetUniform3f("u_Diffuse", glm::vec3(g_Diffuse[0], g_Diffuse[1], g_Diffuse[2]));
-	shader.SetUniform1f("u_SpecularStrength", g_SpecularStrength);
+	shader.SetUniform3f("u_Material.ambient", glm::vec3(g_Ambient[0], g_Ambient[1], g_Ambient[2]));
+	shader.SetUniform3f("u_Material.diffuse", glm::vec3(g_Diffuse[0], g_Diffuse[1], g_Diffuse[2]));
+	shader.SetUniform3f("u_Material.specular", glm::vec3(g_Specular[0], g_Specular[1], g_Specular[2]));
+	shader.SetUniform1f("u_Material.shininess", g_Shininess);
 
 	//glDrawElements(GL_TRIANGLES, m_Indices.size(), GL_UNSIGNED_INT, NULL);
 	glDrawArrays(GL_TRIANGLES, 0, m_Vertices.size());
