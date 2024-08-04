@@ -4,6 +4,7 @@ layout (location = 0) in vec3 pos;
 layout (location = 1) in vec3 normals;
 layout (location = 2) in vec2 textureCoords;
 
+out vec3 o_FragPos;
 out vec2 o_TextureCoords;
 out vec3 o_Normals;
 
@@ -12,6 +13,7 @@ uniform mat4 u_View;
 uniform mat4 u_Projection;
 
 void main() {
+	o_FragPos = vec3(u_ModelTransform * vec4(pos, 1.0));
 	o_TextureCoords = textureCoords;
 	o_Normals = normals;
 

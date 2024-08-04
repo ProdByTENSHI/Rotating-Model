@@ -18,3 +18,11 @@ inline std::unique_ptr<RessourceManager> g_RessourceManager;
 inline chroma::Event<int> g_OnKeyDown;
 inline chroma::Event<int> g_OnKeyUp;
 inline chroma::Event<int> g_OnKeyHold;
+
+// Shader
+inline float g_Ambient[3] = { 1.0f, 1.0f, 1.0f };
+inline float g_Diffuse[3] = { 1.0f, 1.0f, 1.0f };
+inline float g_Specular[3] = { 1.0f, 1.0f, 1.0f };
+
+inline float g_LightPosition[3] = { 0.0f, 1.0f, 0.0f };
+inline float g_LightColor[3] = { 1.0f, 1.0f, 1.0f };
