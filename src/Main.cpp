@@ -96,6 +96,7 @@ int main(int argc, char** argv)
 	_shader.Bind();
 
 	Model* _model = new Model("res/backpack.obj");
+
 	PointLight _light;
 
 	bool _ambientMenuState;
@@ -111,6 +112,7 @@ int main(int argc, char** argv)
 		ImGui::Begin("Test", &_ambientMenuState);
 		ImGui::SliderFloat3("Ambient", g_Ambient, 0.0f, 1.0f);
 		ImGui::SliderFloat3("Diffuse", g_Diffuse, 0.0f, 1.0f);
+		ImGui::SliderFloat("Specular", &g_SpecularStrength, 0.0f, 1.0f);
 		ImGui::SliderFloat3("Light Position", g_LightPosition, -10.0f, 10.0f);
 		ImGui::SliderFloat3("Light Color", g_LightColor, 0.0f, 1.0f);
 		ImGui::End();

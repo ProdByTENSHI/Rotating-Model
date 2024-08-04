@@ -26,13 +26,6 @@ Camera::Camera() : m_ProjectionMatrix(glm::mat4(1.0f)), m_Transform(glm::vec3(0.
 			case GLFW_KEY_S:
 				m_Transform.Translate(glm::vec3(0.0f, 0.0f, MOVEMENT_SPEED));
 				break;
-
-			case GLFW_KEY_SPACE:
-				m_Transform.Rotate(glm::vec3(0.0f, 1.0f, 0.0f), -MOVEMENT_SPEED);
-				break;
-
-			case GLFW_KEY_LEFT_SHIFT:
-				m_Transform.Rotate(glm::vec3(0.0f, 1.0f, 0.0f), MOVEMENT_SPEED);
 			}
 		});
 	g_OnKeyDown.Subscribe(_onKeyDown);
@@ -45,6 +38,7 @@ void Camera::Update(Shader& shader)
 
 	shader.SetUniformMat4("u_Projection", m_ProjectionMatrix);
 	shader.SetUniformMat4("u_View", _view);
+	shader.SetUniform3f("u_CameraPosition", m_Transform.m_Position);
 }
 
 const glm::vec3& Camera::GetDirection()

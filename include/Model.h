@@ -13,6 +13,5 @@ public:
 
 	void Render(Shader& shader);
 
-private:
 	Mesh* m_Mesh;
 };

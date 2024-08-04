@@ -39,6 +39,8 @@ public:
 
 	std::vector<std::shared_ptr<Texture>> m_DiffuseTextures;
 
+	glm::vec3 m_Color = glm::vec3(1.0f);
+
 private:
 	std::vector<aiMesh*> m_Meshes;
 	std::vector<Vertex> m_Vertices;

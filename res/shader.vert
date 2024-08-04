@@ -15,7 +15,9 @@ uniform mat4 u_Projection;
 void main() {
 	o_FragPos = vec3(u_ModelTransform * vec4(pos, 1.0));
 	o_TextureCoords = textureCoords;
-	o_Normals = normals;
+	// Convert Normals to World Space Coordinates
+	// Todo: Do this on CPU
+	o_Normals = mat3(transpose(inverse(u_ModelTransform))) * normals;
 
 	gl_Position = u_Projection * u_View * u_ModelTransform * vec4(pos.x, pos.y, pos.z, 1.0);
 }

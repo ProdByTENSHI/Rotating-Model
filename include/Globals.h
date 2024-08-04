@@ -22,7 +22,7 @@ inline chroma::Event<int> g_OnKeyHold;
 // Shader
 inline float g_Ambient[3] = { 1.0f, 1.0f, 1.0f };
 inline float g_Diffuse[3] = { 1.0f, 1.0f, 1.0f };
-inline float g_Specular[3] = { 1.0f, 1.0f, 1.0f };
+inline float g_SpecularStrength = 0.5f;
 
 inline float g_LightPosition[3] = { 0.0f, 1.0f, 0.0f };
-inline float g_LightColor[3] = { 1.0f, 1.0f, 1.0f };
+inline float g_LightColor[3] = { 0.6f, 0.6f, 0.6f };
